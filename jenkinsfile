@@ -21,8 +21,8 @@ pipeline {
         }
         stage('Deploy on Kubernetes') {
             steps {
-                sh 'kubectl apply -f /var/lib/jenkins/workspace/K8s/pod.yaml'
-                sh 'kubectl rollout restart deployment loadbalancer-pod'
+                sh 'sudo kubectl apply -f /var/lib/jenkins/workspace/K8s/pod.yaml'
+                sh 'sudo kubectl rollout restart deployment loadbalancer-pod'
             }
         }
     }
